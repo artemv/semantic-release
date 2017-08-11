@@ -2,11 +2,14 @@
 There's an issue with semantic-release which sometimes prevents it from getting proper commits set for new version. 
 This happens if published package.json doesn't have gitHead property. This is undocumented property that NPM usually 
 autopopulate but sometimes it doesn't - in this case semantic-release thinks the whole commits history is relevant to 
-given release. One relevant issue logged in semantic-release Github is 
-https://github.com/semantic-release/semantic-release/issues/280. This fork works around this by writing the gitHead 
-property itself before publishing - this makes sense because semantic-release depends on it and NPM doesn't make 
-promises about populating it. The [PR](https://github.com/semantic-release/semantic-release/pull/393) is created but 
-until it's merged this fork can be useful. 
+given release. One relevant issue logged in semantic-release Github is [#280](https://github.com/semantic-release/semantic-release/issues/280).
+
+This fork works around this issue by doing 2 things:
+* let semantic-release pre pre-write gitHead property together with version
+* if semantic-release pre sees that the last released version doesn't have gitHead property, try to use the relevant vX.Y.Z git tag 
+
+The [PR](https://github.com/semantic-release/semantic-release/pull/393) is created but until it's merged this fork can 
+be useful. 
 
 Usage:
       
