@@ -1,3 +1,20 @@
+# This fork
+There's an issue with semantic-release which sometimes prevents it from getting proper commits set for new version. 
+This happens if published package.json doesn't have gitHead property. This is undocumented property that NPM usually 
+autopopulate but sometimes it doesn't - in this case semantic-release thinks the whole commits history is relevant to 
+given release. One relevant issue logged in semantic-release Github is 
+https://github.com/semantic-release/semantic-release/issues/280. This fork works around this by writing the gitHead 
+property itself before publishing - this makes sense because semantic-release depends on it and NPM doesn't make 
+promises about populating it. The [PR](https://github.com/semantic-release/semantic-release/pull/393) is created but 
+until it's merged this fork can be useful. 
+
+Usage:
+      
+```
+npm remove --save semantic-release
+npm install --save @artemv/semantic-release
+```
+
 # :package::rocket: semantic-release
 
 **fully automated package publishing**
