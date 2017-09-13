@@ -3,9 +3,6 @@
 # exit if an error occurs
 set -e
 
-# wait for couch to start
-./wait-for-couch.sh
-
 COUCH=http://admin:password@127.0.0.1:5984
 
 curl -X PUT http://127.0.0.1:5984/_config/admins/admin -d '"password"'
