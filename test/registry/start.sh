@@ -3,11 +3,6 @@
 # exit if an error occurs
 set -e
 
-cd $(dirname $0)
-
-mkdir -p couch
-
-couchdb -b -a local.ini -p couch/pid -o couch/stdout.log -e couch/stderr.log
 # wait for couch to start
 ./wait-for-couch.sh
 
