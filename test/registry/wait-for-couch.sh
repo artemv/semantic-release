@@ -1,7 +1,6 @@
 #!/bin/bash
 
 attempt=0
-success=false
 while [ $attempt -le 590 ]; do
     attempt=$(( $attempt + 1 ))
     echo "Waiting for CouchDB to be up (attempt: $attempt)..."
