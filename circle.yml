@@ -3,3 +3,4 @@ machine:
     - couchdb
   node:
     version: 8.5.0
+
