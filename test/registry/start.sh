@@ -7,7 +7,6 @@ cd $(dirname $0)
 
 mkdir -p couch
 
-mkdir couch
 couchdb -b -a local.ini -p couch/pid -o couch/stdout.log -e couch/stderr.log
 # wait for couch to start
 sleep 1
