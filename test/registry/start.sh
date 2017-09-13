@@ -9,7 +9,8 @@ mkdir -p couch
 
 couchdb -b -a local.ini -p couch/pid -o couch/stdout.log -e couch/stderr.log
 # wait for couch to start
-sleep 1
+./wait-for-couch.sh
+
 COUCH=http://admin:password@127.0.0.1:5984
 
 curl -X PUT http://127.0.0.1:5984/_config/admins/admin -d '"password"'
