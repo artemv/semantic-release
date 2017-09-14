@@ -21,7 +21,7 @@ test('change version', {bail: process.env.TRAVIS === 'true' || process.env.BAIL,
       t.error(err, 'test-module created')
       if (err) return t.end()
 
-      t.test('no version', function (tt) {
+      t.test('no version', {timeout: 60000}, function (tt) {
         tt.plan(1)
 
         baseScenario(cwd, registry.uri)
