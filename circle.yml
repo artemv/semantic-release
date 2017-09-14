@@ -1,9 +1,9 @@
 machine:
+  services:
+    - couchdb
   node:
     version: 8.5.0
 
 dependencies:
   post:
-   - cd test/registry/ && mkdir -p couch && couchdb -a local.ini -p couch/pid -o couch/stdout.log -e couch/stderr.log:
-      background: true
    - test/registry/wait-for-couch.sh
