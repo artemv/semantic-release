@@ -3,6 +3,8 @@
 # close couchdb background process
 couchdb -d
 
+curl -X DELETE $COUCH/registry
+
 # delete data and logs
 cd $(dirname $0)
 
