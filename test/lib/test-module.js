@@ -6,6 +6,7 @@ var mkdirp = require('mkdirp')
 
 module.exports = function (name, registry, cb) {
   var cwd = join(__dirname, '../tmp', name)
+  console.log('cwd', cwd)
 
   mkdirp.sync(cwd)
 
