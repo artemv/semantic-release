@@ -10,7 +10,7 @@ var baseScenario = require('../lib/base-scenario')
 var tearDown = tap.tearDown
 var test = tap.test
 
-test('change version', {bail: process.env.TRAVIS === 'true'}, function (t) {
+test('change version', {bail: process.env.TRAVIS === 'true' || process.env.BAIL, timeout: 60000}, function (t) {
   t.plan(7)
 
   registry.start(function (err, stdout, stderr) {

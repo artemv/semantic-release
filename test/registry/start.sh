@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# exit if an error occurs
-set -e
-
 COUCH=http://admin:password@127.0.0.1:5984
 
 curl -X PUT http://127.0.0.1:5984/_config/admins/admin -d '"password"'
+
+# exit if an error occurs
+set -e
 
 curl -X PUT $COUCH/_config/couchdb/delayed_commits -d '"false"'
 curl -X PUT $COUCH/_config/couch_httpd_auth/users_db_public -d '"true"'
